@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="container loginIn" style="backgroundImage: url(http://codegen.caihongy.cn/20210115/024f31b5d85e4b6999407e49c87b1c14.jpg)">
+    <div class="container loginIn" >
 
-      <div :class="2 == 1 ? 'left' : 2 == 2 ? 'left center' : 'left right'" style="backgroundColor: rgba(255, 255, 255, 0.2)">
+      <div :class="2 == 1 ? 'left' : 2 == 2 ? 'left center' : 'left right'" style="background-color: rgba(255, 255, 255, 0.2)">
         <el-form class="login-form" label-position="left" :label-width="2 == 3 ? '56px' : '0px'">
           <div class="title-container"><h3 class="title" style="color: rgba(0, 150, 136, 1)">电影评论网站系统登录</h3></div>
           <el-form-item :label="2 == 3 ? '用户名' : ''" :class="'style'+2">
@@ -207,6 +207,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  background-image: url('../assets/img/LoginBg.jpg');
 
   .left {
     position: absolute;
