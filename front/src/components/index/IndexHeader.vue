@@ -139,6 +139,7 @@
 			}
 			
 			.title-name {
+				text-align: center;
 				font-size: 24px;
 				color: #fff;
 				font-weight: 700;
