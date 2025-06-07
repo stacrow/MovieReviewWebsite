@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>首页</title>
+    <title>index</title>
     <link rel="stylesheet" href="./layui/css/layui.css">
     <link rel="stylesheet" href="./xznstatic/css/common.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -217,7 +217,7 @@
 
 </style>
 <body>
-<div id="slogen-box">
+<div  id="slogen-box">
     <div class="slogen-container">
         <span class="quote-text">电影让我们的生命至少延长了三倍。</span>
         <img src="./img/星月.png" alt="icon" class="quote-image">
@@ -225,13 +225,7 @@
 </div>
 <!-- start 顶部导航栏 -->
 <div id="header">
-    <!--			<div v-if='true' class="nav-top">-->
-    <!--			  <img v-if='false' class="nav-top-img" src='http://codegen.caihongy.cn/20210223/d9a5a35349e6402b8fad0b898e527db0.png'>-->
-    <!--			  <div v-if="true" class="nav-top-title">{{projectName}}</div>-->
-    <!--			  <div class="nav-top-tel"></div>-->
-    <!--			</div>-->
     <div class="navs">
-        <!--				<div class="logo" style="font-size: 20px;top: 32px;color: #fff;font-weight: bold;margin-left: -200px;width: 240px;" v-text="projectName"></div>-->
         <div class="title" v-if="false" v-text="projectName"></div>
         <div class="list">
             <ul>
@@ -290,11 +284,15 @@
             adminurl: adminurl,
             chatFlag: chatFlag,
             projectName: projectName,
+            isIndex: false
         },
         mounted: function () {
             this.bindClickOnLi();
         },
         created() {
+            // 判断当前页面是否为 index.html
+            const path = window.location.pathname;
+            this.isIndex = /index\.html/.test(path); // 匹配 index.html
             this.iconArr.sort(() => {
                 return (0.5 - Math.random())
             })
