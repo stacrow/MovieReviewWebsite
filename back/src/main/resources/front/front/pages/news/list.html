@@ -35,12 +35,11 @@
 		border-width: 0;
 		border-style: solid;
 		border-color: rgba(0,0,0,.3);
-		border-radius: 10;
 		background-color: rgba(255, 153, 0, 1);
 		box-shadow: 0 0 0px rgba(255,0,0,.8);
 	}
 	
-	// 列表
+
 		.recommend {
 			padding: 10px 0;
 			display: flex;
@@ -218,25 +217,8 @@
 </style>
 <body>
   <div id="app">
-    <div class="banner">
-		<div class="layui-carousel" id="test1" :style='{"boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 auto","borderColor":"rgba(255, 255, 255, 0.3)","borderRadius":"0px","borderWidth":"0","width":"90%","borderStyle":"solid"}'>
-		  <div carousel-item>
-			<div v-for="(item,index) in swiperList" :key="index">
-				<img style="width: 100%;height: 100%;object-fit:cover;" :src="item.img" />
-			</div>
-		  </div>
-		</div>
-      <!-- <div class="bd">
-        <ul>
-          <li v-for="(item,index) in swiperList" v-bind:key="index"><img :src="item.img" /></li>
-        </ul>
-        <div class="hd">
-          <ul>
-            <li v-for="(item,index) in swiperList" v-bind:key="index"></li>
-          </ul>
-        </div>
-      </div> -->
-    </div>
+
+
 
     <!-- <div class="news_con con_1000">
       <div class="ny_right" style="width: 100%;">
