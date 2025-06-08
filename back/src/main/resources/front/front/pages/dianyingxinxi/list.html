@@ -41,7 +41,6 @@
         border-color: rgba(255, 255, 255, 0.3);
         border-radius: 10px;
         background-color: rgba(255, 255, 255, 1);
-        box-shadow: 0 0 0px rgba(255, 0, 0, .8);
     }
 
     #test1 .layui-carousel-ind li.layui-this {
@@ -50,14 +49,10 @@
         border-width: 0;
         border-style: solid;
         border-color: rgba(0, 0, 0, .3);
-        border-radius: 10;
-        background-color: rgba(255, 153, 0, 1);
-        box-shadow: 0 0 0px rgba(255, 0, 0, .8);
+        border-radius: 10px;
+        background-color: rgba(88, 198, 231, 0.6);
     }
 
-    /
-    /
-    列表
     .recommend {
         padding: 10px 0;
         display: flex;
@@ -157,7 +152,7 @@
 
     .recommend .box .list .list-item-body .info .price {
         padding-top: 5px;
-        color: red;
+        color: rgba(172, 217, 230, 0.6);
         font-size: 14px;
         text-align: center;
         box-sizing: border-box;
@@ -165,7 +160,7 @@
 
     .recommend .box .list .list-item-body .info .name {
         padding-top: 5px;
-        color: red;
+        color: rgba(186, 231, 244, 0.5);
         font-size: 14px;
         text-align: center;
         box-sizing: border-box;
@@ -218,7 +213,7 @@
 
     .recommend .box .news .list-item .list-item-body .item-info .name {
         padding-top: 5px;
-        color: red;
+        color: rgba(88, 198, 231, 0.6);
         font-size: 14px;
         box-sizing: border-box;
         overflow: hidden;
@@ -230,7 +225,7 @@
 
     .recommend .box .news .list-item .list-item-body .item-info .time {
         padding-top: 5px;
-        color: red;
+        color: rgba(88, 198, 231, 0.6);
         font-size: 14px;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -266,102 +261,212 @@
 
     <div :style='{"padding":"10px 0 10px 0","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"10px 0 0 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 255, 255, 1)","borderRadius":"0","borderWidth":"0","borderStyle":"solid"}'
          class="recommend index-pv1">
-        <div class="box" style='width:80%'>
-            <div :style='{"padding":"0","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0,0,0,1)","backgroundColor":"rgba(0,0,0,0)","borderRadius":"0","borderWidth":"0","width":"100%","borderStyle":"solid","height":"auto"}'>
-                <div :index="-1" :style='swiperIndex==-1?{"padding":"0 10px","boxShadow":"0 0 6px rgba(0,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,1)","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"84px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}:{"padding":"0 10px","boxShadow":"0 0 6px rgba(0,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,1)","backgroundColor":"#fff","color":"#333","borderRadius":"4px","borderWidth":"0","width":"84px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'
-                     class="category-search"
-                     style="display: inline-block;text-align: center;cursor: pointer;">
+        <div class="box" style='width:90%'>
+<!--            <div :style='{"padding":"0","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0,0,0,1)","backgroundColor":"rgba(0,0,0,0)","borderRadius":"0","borderWidth":"0","width":"100%","borderStyle":"solid","height":"auto"}'>-->
+<!--                <div :index="-1" :style='swiperIndex==-1?{"padding":"0 10px","boxShadow":"0 0 6px rgba(0,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,1)","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"84px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}:{"padding":"0 10px","boxShadow":"0 0 6px rgba(0,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,1)","backgroundColor":"#fff","color":"#333","borderRadius":"4px","borderWidth":"0","width":"84px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'-->
+<!--                     class="category-search"-->
+<!--                     style="display: inline-block;text-align: center;cursor: pointer;">-->
+<!--                    全部-->
+<!--                </div>-->
+<!--                <div :index="index" :key="index"-->
+<!--                     :style='swiperIndex==index?{"padding":"0 10px","boxShadow":"0 0 6px rgba(0,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,1)","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"84px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}:{"padding":"0 10px","boxShadow":"0 0 6px rgba(0,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,1)","backgroundColor":"#fff","color":"#333","borderRadius":"4px","borderWidth":"0","width":"84px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'-->
+<!--                     class="category-search" style="display: inline-block;text-align: center;cursor: pointer;"-->
+<!--                     v-for="(item,index) in categoryList">-->
+<!--                    {{categoryList[index]}}-->
+<!--                </div>-->
+<!--            </div>-->
+            <div :style='{
+            "padding": "0 ",
+            "margin": "0",
+            "display": "grid",
+            "gridTemplateColumns": "repeat(6, 1fr)",
+            "gap": "15px 10px",
+            "width": "100%",
+            "boxSizing": "border-box"
+}'>
+                <div :index="-1"
+                     :style='{
+                     "padding": "0 10px",
+                     "boxShadow": "0 0 6px rgba(0,0,0,.3)",
+                     "textAlign": "center",
+                     "lineHeight": "34px",
+                     "fontSize": "14px",
+                     "borderRadius": "4px",
+                     "backgroundColor": swiperIndex==-1 ? "rgb(151,222,208)" : "#fff",
+                     "color": swiperIndex==-1 ? "#fff" : "#333",
+                     "cursor": "pointer"
+         }'
+                     class="category-search">
                     全部
                 </div>
-                <div :index="index" :key="index"
-                     :style='swiperIndex==index?{"padding":"0 10px","boxShadow":"0 0 6px rgba(0,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,1)","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"84px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}:{"padding":"0 10px","boxShadow":"0 0 6px rgba(0,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,1)","backgroundColor":"#fff","color":"#333","borderRadius":"4px","borderWidth":"0","width":"84px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'
-                     class="category-search" style="display: inline-block;text-align: center;cursor: pointer;"
-                     v-for="(item,index) in categoryList">
-                    {{categoryList[index]}}
+                <div v-for="(item,index) in categoryList"
+                     :key="index"
+                     :index="index"
+                     :style='{
+                         "padding": "0 10px",
+                         "boxShadow": "0 0 6px rgba(0,0,0,.3)",
+                         "textAlign": "center",
+                         "lineHeight": "34px",
+                         "fontSize": "14px",
+                         "borderRadius": "4px",
+                         "backgroundColor": swiperIndex==index ? "rgb(151,222,208)" : "#fff",
+                         "color": swiperIndex==index ? "#fff" : "#333",
+                         "cursor": "pointer"
+         }'
+                     class="category-search">
+                    {{item}}
                 </div>
             </div>
-            <div :style='{"padding":"10px 0 10px 0","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"10px 0 10px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 153, 0, 1)","borderRadius":"4px","borderWidth":"0","borderStyle":"solid","justifyContent":"flex-start","height":"54px"}'
+
+            <div :style='{"margin":"20px","padding":"10px 0 10px 0","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"10px 0 10px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgb(151,222,208)","borderRadius":"4px","borderWidth":"0","borderStyle":"solid","justifyContent":"flex-start","height":"54px"}'
                  class="title">
                 <span :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(255,0,0,1)","backgroundColor":"rgba(0,0,0,0)","color":"#333","borderRadius":"0 0 2px 0","borderWidth":"0","fontSize":"18px","borderStyle":"solid"}'>电影信息</span><span
                     :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(0,0,0,0)","backgroundColor":"rgba(0,0,0,0)","color":"rgba(0, 0, 0, 1)","borderRadius":"0","borderWidth":"0","fontSize":"14px","borderStyle":"solid"}'>您现在的位置：电影信息</span>
             </div>
-            <form :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"10px 0 10px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 255, 255, 1)","borderRadius":"4px","alignItems":"flex-end","borderWidth":"0","borderStyle":"solid","justifyContent":"flex-end","height":"64px"}'
-                  class="layui-form filter">
-                <div class="item-list">
-                    <div :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0,0,0,0)","backgroundColor":"transparent","color":"rgba(255, 255, 255, 1)","borderRadius":"0","textAlign":"right","borderWidth":"0","width":"auto","fontSize":"16px","borderStyle":"solid"}'
-                         class="lable">
-                        电影名称
-                    </div>
-                    <input :style='{"boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(176, 170, 170, 1)","backgroundColor":"rgba(255, 255, 255, 1)","color":"#333","borderRadius":"8px","textAlign":"center","borderWidth":"1px","width":"140px","fontSize":"14px","borderStyle":"solid","height":"44px"}'
-                           autocomplete="off"
-                           class="layui-input" id="dianyingmingcheng" name="dianyingmingcheng" placeholder="电影名称"
+            <form :style='{
+    "padding": "10px 0",
+    "display": "flex",
+    "gap": "15px",
+    "alignItems": "center",
+    "justifyContent": "flex-end"
+}' class="layui-form filter">
+                <div class="item-list" style="flex:1">
+                    <input :style='{
+            "width": "100%",
+            "height": "44px",
+            "padding": "0 10px",
+            "backgroundColor": "rgb(228,246,243)",
+            "borderRadius": "8px",
+            "fontSize": "14px"
+        }' class="layui-input"
+                           placeholder="电影名称"
+                           style="border:none; box-shadow:none; color:#666"
+                           id="dianyingmingcheng"
+                           name="dianyingmingcheng"
                            type="text">
                 </div>
-                <div class="item-list">
-                    <div :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0,0,0,0)","backgroundColor":"transparent","color":"rgba(255, 255, 255, 1)","borderRadius":"0","textAlign":"right","borderWidth":"0","width":"auto","fontSize":"16px","borderStyle":"solid"}'
-                         class="lable">
-                        导演
-                    </div>
-                    <input :style='{"boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(176, 170, 170, 1)","backgroundColor":"rgba(255, 255, 255, 1)","color":"#333","borderRadius":"8px","textAlign":"center","borderWidth":"1px","width":"140px","fontSize":"14px","borderStyle":"solid","height":"44px"}'
-                           autocomplete="off"
-                           class="layui-input" id="daoyan" name="daoyan" placeholder="导演" type="text">
+                <div class="item-list" style="flex:1">
+                    <input :style='{
+            "width": "100%",
+            "height": "44px",
+            "padding": "0 10px",
+            "backgroundColor": "rgb(228,246,243)",
+            "borderRadius": "8px",
+            "fontSize": "14px"
+        }' class="layui-input"
+                           placeholder="导演"
+                           style="border:none; box-shadow:none; color:#666"
+                           id="daoyan"
+                           name="daoyan"
+                           type="text">
                 </div>
-                <div class="item-list">
-                    <div :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0,0,0,0)","backgroundColor":"transparent","color":"rgba(255, 255, 255, 1)","borderRadius":"0","textAlign":"right","borderWidth":"0","width":"auto","fontSize":"16px","borderStyle":"solid"}'
-                         class="lable">
-                        主演
-                    </div>
-                    <input :style='{"boxShadow":"0 0 6px rgba(255,0,0,0)","borderColor":"rgba(176, 170, 170, 1)","backgroundColor":"rgba(255, 255, 255, 1)","color":"#333","borderRadius":"8px","textAlign":"center","borderWidth":"1px","width":"140px","fontSize":"14px","borderStyle":"solid","height":"44px"}'
-                           autocomplete="off"
-                           class="layui-input" id="zhuyan" name="zhuyan" placeholder="主演" type="text">
+                <div class="item-list" style="flex:1">
+                    <input :style='{
+            "width": "100%",
+            "height": "44px",
+            "padding": "0 10px",
+            "backgroundColor": "rgb(228,246,243)",
+            "borderRadius": "8px",
+            "fontSize": "14px"
+        }' class="layui-input"
+                           placeholder="主演"
+                           style="border:none; box-shadow:none; color:#666"
+                           id="zhuyan"
+                           name="zhuyan"
+                           type="text">
                 </div>
-                <button :style='{"padding":"0 15px","boxShadow":"0 0 8px rgba(0,0,0,0)","margin":"0 0 0 10px","borderColor":"#409EFF","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"40px"}'
-                        class="layui-btn layui-btn-normal" id="btn-search" type="button">
-                    <i class="layui-icon layui-icon-search" v-if="true"></i>搜索
-                </button>
-                <button :style='{"padding":"0 15px","boxShadow":"0 0 8px rgba(0,0,0,0)","margin":"0 0 0 10px","borderColor":"#409EFF","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"40px"}'
-                        @click="jump('../dianyingxinxi/add.html')" class="layui-btn btn-theme" type="button"
-                        v-if="isAuth('dianyingxinxi','新增')">
-                    <i class="layui-icon" v-if="true">&#xe654;</i>添加
+                <button :style='{
+        "width": "100px",
+        "height": "44px",
+        "backgroundColor": "rgb(151,222,208)",
+        "border": "none",
+        "color": "#fff",
+        "fontSize": "14px"
+    }' class="layui-btn"
+                        id="btn-search"
+                        type="button">
+                    <i class="layui-icon layui-icon-search"></i>搜索
                 </button>
             </form>
-            <!-- 样式二 -->
-            <div class="list news" style="position: relative;width: 100%;">
-                <div :style='{"padding":"0","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0,0,0,1)","backgroundColor":"rgba(0,0,0,0)","borderRadius":"0","borderWidth":"0","width":"100%","borderStyle":"solid","height":"auto"}' style="position: absolute;left: 0;top: 0;transform: translate3d(-100%, 0, 0);"
-                     v-if="2 == 1">
-                    <div :index="-1" :style='swiperIndex==-1?{"padding":"0 10px","boxShadow":"0 0 6px rgba(0,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,1)","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"84px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}:{"padding":"0 10px","boxShadow":"0 0 6px rgba(0,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,1)","backgroundColor":"#fff","color":"#333","borderRadius":"4px","borderWidth":"0","width":"84px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}' class="category-search"
-                         style="text-align: center;cursor: pointer;">
-                        全部
-                    </div>
-                    <div :key="index" v-for="(item,index) in categoryList">
-                        <div :index="index"
-                             :style='swiperIndex==index?{"padding":"0 10px","boxShadow":"0 0 6px rgba(0,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,1)","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"84px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}:{"padding":"0 10px","boxShadow":"0 0 6px rgba(0,0,0,.3)","margin":"0 10px 0 0","borderColor":"rgba(0,0,0,1)","backgroundColor":"#fff","color":"#333","borderRadius":"4px","borderWidth":"0","width":"84px","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'
-                             class="category-search" style="text-align: center;cursor: pointer;">{{categoryList[index]}}
-                        </div>
-                    </div>
-                </div>
-                <div :class="3=='1'?'list-item1':3=='3'?'list-item3':''" :key="index"
-                     @click="jump('../dianyingxinxi/detail.html?id='+item.id)" class="list-item" v-for="(item,index) in dataList">
-                    <div :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'
-                         class="list-item-body animation-box">
-                        <img :src="item.haibao?item.haibao.split(',')[0]:''"
-                             :style='{"boxShadow":"0 0px rgba(255,0,0,.8)","borderColor":"rgba(0,0,0,.3)","borderRadius":"0","borderWidth":"0","width":"335px","borderStyle":"solid","height":"230px"}'>
-                        <div class="item-info">
-                            <div :style='{"isshow":true,"padding":"0","margin":"5px 0 0 0","backgroundColor":"rgba(0,0,0,0)","color":"#666","borderRadius":"0","textAlign":"right","width":"70px","fontSize":"14px"}'
-                                 class="name"
-                                 v-if="true">{{item.dianyingmingcheng}}
-                            </div>
-                            <div :style='{"padding":"0","margin":"10px 0 0 0","backgroundColor":"rgba(170, 90, 90, 0)","color":"rgba(48, 46, 46, 1)","borderRadius":"0","textAlign":"right","width":"100%","fontSize":"16px"}'
-                                 class="time"
-                                 v-if="item.price">{{item.price}} RMB
+
+            <!-- 电影信息 -->
+            <!-- 修改后的电影信息展示区域 -->
+            <div class="recommend index-pv1">
+                <div class="list" :style='{"padding":"0 5px"}'>
+                    <div :class="4=='3'?'list-item3':4=='5'?'list-item5':''"
+                         :style='{"margin":"0 5px", "flex":"0 0 calc(25% - 10px)"}'
+                         :key="index"
+                         @click="jump('../dianyingxinxi/detail.html?id='+item.id)"
+                         class="list-item"
+                         v-for="(item,index) in dataList">
+
+                        <!-- 新的卡片样式 -->
+                        <div :style='{
+                "padding":"6px",
+                "boxShadow":"0 0 0px rgba(255,0,0,.8)",
+                "margin":"0 0 15px 0",
+                "borderColor":"rgba(0,0,0,.3)",
+                "backgroundColor":"rgba(255, 255, 255, 1)",
+                "borderRadius":"0px",
+                "borderWidth":"0",
+                "borderStyle":"solid"}'
+                             class="list-item-body animation-box">
+
+                            <!-- 海报部分 -->
+                            <img :src="item.haibao?item.haibao.split(',')[0]:''"
+                                 :style='{
+                        "boxShadow":"0 0 0px rgba(255,0,0,.8)",
+                        "borderColor":"rgba(0,0,0,.3)",
+                        "borderRadius":"0",
+                        "borderWidth":"0",
+                        "width":"100%",
+                        "borderStyle":"solid",
+                        "height":"300px"}'>
+
+                            <!-- 信息部分 -->
+                            <div :style='{
+                    "isshow":true,
+                    "padding":" 0",
+                    "margin":"8px 0 0 0",
+                    "backgroundColor":"rgb(189,234,226)",
+                    "color":"#2c3e50",
+                    "borderRadius":"6px",
+                    "textAlign":"center",
+                    "fontSize":"16px",
+                    "minHeight":"50px",
+                    "display":"flex",
+                    "alignItems":"center",
+                    "justifyContent":"center"}'
+                                 class="name">
+                                {{item.dianyingmingcheng}}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div :style="{textAlign:2==1?'left':2==2?'center':'right'}" class="pager" id="pager"></div>
+
+            <!-- 分页按钮样式修改 -->
+            <div style="text-align: center;">
+                <el-button :style='{
+        "padding":"5px 15px",
+        "boxShadow":"0 0 6px rgba(255,0,0,0)",
+        "margin":"4px auto",
+        "borderColor":"#ccc",
+        "backgroundColor":"#fff",
+        "color":"rgb(151,222,208)",
+        "borderRadius":"6px",
+        "borderWidth":"0",
+        "width":"auto",
+        "fontSize":"16px",
+        "borderStyle":"solid",
+        "height":"34px"}'
+                           @click="jump('../dianyingxinxi/list.html')"
+                           type="button">
+                    更多电影
+                </el-button>
+            </div>
+
         </div>
-    </div>
 
 
 </div>
