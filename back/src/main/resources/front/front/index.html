@@ -214,6 +214,88 @@
             drop-shadow(0 0 5px rgba(88, 198, 231, 0.6))
             drop-shadow(0 0 10px rgba(170, 228, 217, 0.3));
     }
+    /*footer格式*/
+    footer {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 12px;
+        padding: 40px 30px;
+        box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(8px);
+        margin-top: auto;
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        font-weight: 300;
+        letter-spacing: 2px;
+
+    }
+    .logo-img {
+        height: 2.5rem;  /* 与原字体大小2.5rem保持一致 */
+        width: auto;     /* 保持原始图片比例 */
+        vertical-align: middle; /* 确保与周围元素对齐 */
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1)); /* 可选阴影效果 */
+    }
+    .copyright {
+        text-align: right;
+        font-weight: 300;
+    }
+
+    .copyright-line1 {
+        font-size: 1.1rem;
+        color: #444;
+        margin-bottom: 5px;
+    }
+
+    .copyright-line2 {
+        font-size: 0.95rem;
+        color: #7f8c8d;
+    }
+
+    .divider {
+        height: 1px;
+        background: linear-gradient(to right, transparent, #ddd, transparent);
+        margin: 25px 0;
+    }
+
+    .font-info {
+        text-align: center;
+        font-weight: 300;
+        color: #7f8c8d;
+        font-size: 0.9rem;
+        margin-top: 15px;
+    }
+
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+        }
+        .logo-img {
+            height: 2rem;
+            filter:
+                    drop-shadow(0 0 5px rgba(88, 198, 231, 0.6))
+                    drop-shadow(0 0 10px rgba(170, 228, 217, 0.3));
+        }
+    }
 
 </style>
 <body>
@@ -253,19 +335,16 @@
 <iframe src="./pages/home/home.html" id="iframe" frameborder="0" scrolling="no" width="100%"
         onload="changeFrameHeight"></iframe>
 
-<div id="tabbar" v-if="true" class="tabbar"
-     :style='{"padding":"10px 0px","boxShadow":"0 00px rgba(255,0,0,.8)","margin":"20px 0 0 0","borderColor":"rgba(255, 255, 255, 0.3)","backgroundColor":"rgba(255, 153, 14, 1)","borderRadius":"0","borderWidth":"0","borderStyle":"solid"}'
-     style="position: relative;z-index: 999;">
-    <img v-if='false'
-         :style='{"boxShadow":"0 0 0px rgba(10, 20, 129, 0.3)","margin":"0 auto","borderColor":"rgba(0,0,0,.3)","borderRadius":"0","borderWidth":"0px","width":"144px","borderStyle":"solid","height":"45px"}'
-         style='display: block;' src='http://codegen.caihongy.cn/20210121/45c12638994c41ccb884df4d84390b79.jpg'/>
-    <div :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"10px auto","borderColor":"rgba(0,0,0,1)","backgroundColor":"rgba(255, 255, 255, 1)","color":"rgba(47, 44, 44, 1)","textAlign":"center","borderRadius":"0","borderWidth":"0","width":"100%","lineHeight":"32px","fontSize":"14px","borderStyle":"solid"}'
-         class="company"></div>
-    <div :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"10px auto","borderColor":"rgba(0,0,0,1)","backgroundColor":"rgba(255, 255, 255, 1)","color":"rgba(47, 44, 44, 1)","textAlign":"center","borderRadius":"0","borderWidth":"0","width":"100%","lineHeight":"32px","fontSize":"14px","borderStyle":"solid"}'
-         class="record"></div>
-    <div :style='{"padding":"0 10px","boxShadow":"0 0 6px rgba(255,0,0,0)","margin":"10px auto 30px auto","borderColor":"rgba(255,255,255,1)","backgroundColor":"rgba(255, 153, 14, 1)","color":"rgba(255, 255, 255, 1)","textAlign":"center","borderRadius":"0","borderWidth":"1px 0","width":"40%","lineHeight":"32px","fontSize":"16px","borderStyle":"solid"}'
-         class="desc"></div>
-</div>
+<footer id="tabbar" v-if="true" class="tabbar">
+    <div class="footer-content">
+        <div class="logo"><img src="./img/星月.svg" alt="SoM Logo" class="logo-img"></div>
+        <div class="copyright">
+            <p class="copyright-line1">© 2025 xxxx - ALL RIGHTS RESERVED</p>
+            <p class="copyright-line2">湖北省武汉市江夏区 MEowSHEep 182 C座230311室</p>
+        </div>
+    </div>
+    <p class="font-info">当前使用字体：Noto Sans SC Light (300)</p>
+</footer>
 
 <script src="./xznstatic/js/jquery-1.11.3.min.js"></script>
 <script src="./layui/layui.js"></script>
