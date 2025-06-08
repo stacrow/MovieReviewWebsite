@@ -79,12 +79,44 @@
 							<textarea :style='{"padding":"10px","boxShadow":"0 0 6px rgba(197, 197, 197, 0.3)","borderColor":"rgba(0,0,0,.3)","backgroundColor":"#fff","color":"#333","borderRadius":"4px","borderWidth":"0","fontSize":"14px","borderStyle":"solid","height":"120px"}' name="content" required lay-verify="required" placeholder="请输入内容" class="layui-textarea"></textarea>
 						</div>
 					</div>
-					<div class="layui-form-item">
-						<div class="layui-input-block">
-							<button :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.3)","margin":"10px 5px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"14px","borderWidth":"0","width":"auto","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}' class="layui-btn btn-submit" lay-submit lay-filter="*">立即提交</button>
-							<button :style='{"padding":"0 10px","boxShadow":"0 0 2px rgb(255,153,0)","margin":"10px 5px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 255, 255, 1)","color":"rgba(255, 153, 0, 1)","borderRadius":"14px","borderWidth":"0","width":"auto","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}' type="reset" class="layui-btn layui-btn-primary">重置</button>
+					<div class="layui-form-item" style="text-align: center;">
+						<div class="layui-input-block" style="margin:0 auto; display:inline-block; text-align:center">
+							<button
+									:style='{
+                "padding":"0 10px",
+                "boxShadow":"0 0 0px rgba(255,0,0,.3)",
+                "margin":"10px 5px 0",
+                "borderColor":"rgba(0,0,0,.3)",
+                "backgroundColor":"#0f1c2e",
+                "color":"#fff",
+                "borderRadius":"14px",
+                "borderWidth":"0",
+                "width":"120px",
+                "lineHeight":"34px",
+                "fontSize":"14px",
+                "borderStyle":"solid"
+            }'
+									class="layui-btn btn-submit" lay-submit lay-filter="*">立即提交</button>
+							<button
+									:style='{
+                "padding":"0 10px",
+                "boxShadow":"0 0 2px #0f1c2e",
+                "margin":"10px 5px 0",
+                "borderColor":"#0f1c2e",
+                "backgroundColor":"rgba(255, 255, 255, 1)",
+                "color":"#0f1c2e",
+                "borderRadius":"14px",
+                "borderWidth":"1px",
+                "width":"120px",
+                "lineHeight":"34px",
+                "fontSize":"14px",
+                "borderStyle":"solid"
+            }'
+									type="reset"
+									class="layui-btn layui-btn-primary">重置</button>
 						</div>
 					</div>
+
 				</form>
 				<div class="message-list" v-if="dataList.length" :style='{"padding":"0 20px 20px","boxShadow":"0 0 0px rgba(255,0,0,.3)","margin":"0","borderColor":"rgba(255,0,0,.3)","backgroundColor":"#fff","borderRadius":"0px","borderWidth":"0","borderStyle":"solid"}'>
 					<div :style='{"padding":"20px 0","boxShadow":"0 0 0px rgba(255,0,0,0)","margin":"0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"#fff","borderRadius":"0","borderWidth":"0 0 1px 0","borderStyle":"solid"}'  class="message-item" v-for="(item,index) in dataList" v-bind:key="index" >
@@ -218,7 +250,7 @@
 							limit: limit,
 							groups: 5,
 							layout: ["prev","page","next"],
-							theme: '#FF9900',
+							theme: 'rgba(71, 101, 140, 1)',
 							jump: function(obj, first) {
 								//首次不执行
 								if (!first) {

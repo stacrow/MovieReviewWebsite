@@ -48,7 +48,7 @@
 			border-style: solid;
 			border-color: rgba(0,0,0,.3);
 			border-radius: 10;
-			background-color: rgba(255, 153, 0, 1);
+			background-color: #0f1c2e;
 			box-shadow: 0 0 0px rgba(255,0,0,.8);
 		}
 
@@ -95,7 +95,7 @@
 			border-style: solid;
 			border-color: rgba(255,0,0,.3);
 			border-radius: 0;
-			background-color: rgba(255, 153, 0, 1);
+			background-color: #0f1c2e;
 			box-shadow: 0 0 6px rgba(255,0,0,0);
 		}
 		.center-container .layui-nav-tree .layui-nav-item:hover {
@@ -105,7 +105,7 @@
 			border-style: solid;
 			border-color: rgba(255, 255, 255, 0.3);
 			border-radius: 0;
-			background-color: rgba(255, 153, 0, 1);
+			background-color: #0f1c2e;
 			box-shadow: 0 0 0px rgba(255,0,0,0);
 		}
 		.center-container .layui-nav-tree .layui-nav-item a {
@@ -224,7 +224,7 @@
 						<div class="layui-form-item"  :style='{"padding":"10px","boxShadow":"0 0 6px rgba(181, 181, 181, 1)","margin":"0 0 10px 0","borderColor":"rgba(255, 255, 255, 0.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
 							<label  :style='{"width":"94px","padding":"0 12px 0 0","fontSize":"14px","color":"#333","textAlign":"right"}' style="opacity: 0;" class="layui-form-label">图片</label>
 							<div class="layui-input-block">
-								<button :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.5)","margin":"0 10px 0 0","borderColor":"#ccc","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"8px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="button" class="layui-btn btn-theme" id="touxiangUpload">
+								<button :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.5)","margin":"0 10px 0 0","borderColor":"#ccc","backgroundColor":"#0f1c2","color":"#fff","borderRadius":"8px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="button" class="layui-btn btn-theme" id="touxiangUpload">
 									<i v-if="true" :style='{"color":"#fff","show":true,"fontSize":"14px"}' class="layui-icon">&#xe67c;</i>上传图片
 								</button>
 							</div>
@@ -247,13 +247,13 @@
 
 						<div class="layui-form-item">
 							<div class="layui-input-block" style="display: flex;flex-wrap:wrap;">
-								<button :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.5)","margin":"10px auto 0","borderColor":"#ccc","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"8px","borderWidth":"0","width":"10%","fontSize":"14px","borderStyle":"solid","height":"44px"}' class="layui-btn btn-submit btn-theme" lay-submit lay-filter="*">更新信息</button>
-                <button :style='{"padding":"0 10px","boxShadow":"0 0 2px rgb(255,153,0)","margin":"10px auto","borderColor":"#ccc","backgroundColor":"#fff","color":"rgba(255, 153, 0, 1)","borderRadius":"8px","borderWidth":"0","width":"10%","fontSize":"14px","borderStyle":"solid","height":"44px"}' @click="logout" class="layui-btn btn-submit">退出登录</button>
+								<button :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.5)","margin":"10px auto 0","borderColor":"#ccc","backgroundColor":"#0f1c2e","color":"#fff","borderRadius":"8px","borderWidth":"0","width":"10%","fontSize":"14px","borderStyle":"solid","height":"44px"}' class="layui-btn btn-submit btn-theme" lay-submit lay-filter="*">更新信息</button>
+                <button :style='{"padding":"0 10px","boxShadow":"0 0 2px #0f1c2e","margin":"10px auto","borderColor":"#0f1c2e","backgroundColor":"#fff","color":"#0f1c2e","borderRadius":"8px","borderWidth":"0","width":"10%","fontSize":"14px","borderStyle":"solid","height":"44px"}' @click="logout" class="layui-btn btn-submit">退出登录</button>
 							</div>
 						</div>
 						<!-- <div class="layui-form-item">
 							<div class="layui-input-block">
-								<button :style='{"padding":"0 10px","boxShadow":"0 0 2px rgb(255,153,0)","margin":"10px auto","borderColor":"#ccc","backgroundColor":"#fff","color":"rgba(255, 153, 0, 1)","borderRadius":"8px","borderWidth":"0","width":"10%","fontSize":"14px","borderStyle":"solid","height":"44px"}' @click="logout" class="layui-btn btn-submit">退出登录</button>
+								<button :style='{"padding":"0 10px","boxShadow":"0 0 2px rgb(255,153,0)","margin":"10px auto","borderColor":"#ccc","backgroundColor":"#fff","color":"#0f1c2e","borderRadius":"8px","borderWidth":"0","width":"10%","fontSize":"14px","borderStyle":"solid","height":"44px"}' @click="logout" class="layui-btn btn-submit">退出登录</button>
 							</div>
 						</div> -->
 					</form>
