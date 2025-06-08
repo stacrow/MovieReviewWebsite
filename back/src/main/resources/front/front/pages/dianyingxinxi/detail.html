@@ -67,7 +67,7 @@
     }
 
     .detail-tab .layui-tab-card > .layui-tab-title .layui-this {
-        background-color: rgba(255, 153, 0, 1);
+        background-color: rgb(170,228,217);
         color: #fff;
         font-size: 14px;
     }
@@ -96,26 +96,26 @@
 				</span>
 
             <a v-if='storeupFlag'
-               :style='{"padding":"0 12px","boxShadow":"0 0 0px rgba(123, 103, 251, 1)","borderColor":"rgba(42, 20, 179, 0)","backgroundColor":"rgba(255, 255, 255, 0)","color":"rgba(255, 153, 0, 1)","borderRadius":"0px","borderWidth":"0","fontSize":"16px","lineHeight":"34px","borderStyle":"solid"}'
+               :style='{"padding":"0 12px","boxShadow":"0 0 0px rgba(123, 103, 251, 1)","borderColor":"rgba(42, 20, 179, 0)","backgroundColor":"rgba(255, 255, 255, 0)","color":"rgb(170,228,217)","borderRadius":"0px","borderWidth":"0","fontSize":"16px","lineHeight":"34px","borderStyle":"solid"}'
                @click="storeUp()" href="javascript:void(0)">
                 <i class="layui-icon" style="font-size: 20px;color: red;" v-if='true'
-                   :style='{"color":"rgba(255, 153, 0, 1)","padding":"0 2px 0 0","fontSize":"18px"}'>&#xe67a;</i>取消收藏
+                   :style='{"color":"rgb(170,228,217)","padding":"0 2px 0 0","fontSize":"18px"}'>&#xe67a;</i>取消收藏
             </a>
             <a v-if='!storeupFlag'
-               :style='{"padding":"0 12px","boxShadow":"0 0 0px rgba(123, 103, 251, 1)","borderColor":"rgba(42, 20, 179, 0)","backgroundColor":"rgba(255, 255, 255, 0)","color":"rgba(255, 153, 0, 1)","borderRadius":"0px","borderWidth":"0","fontSize":"16px","lineHeight":"34px","borderStyle":"solid"}'
+               :style='{"padding":"0 12px","boxShadow":"0 0 0px rgba(123, 103, 251, 1)","borderColor":"rgba(42, 20, 179, 0)","backgroundColor":"rgba(255, 255, 255, 0)","color":"rgb(170,228,217)","borderRadius":"0px","borderWidth":"0","fontSize":"16px","lineHeight":"34px","borderStyle":"solid"}'
                @click="storeUp()" href="javascript:void(0)">
                 <i class="layui-icon" style="font-size: 20px;color: red;" v-if='true'
-                   :style='{"color":"rgba(255, 153, 0, 1)","padding":"0 2px 0 0","fontSize":"18px"}'>&#xe67b;</i>点我收藏
+                   :style='{"color":"rgb(170,228,217)","padding":"0 2px 0 0","fontSize":"18px"}'>&#xe67b;</i>点我收藏
             </a>
 
         </div>
         <div class="layui-row" style="display: flex">
-            <div class="layui-col-md5" style="width:450px">a
+            <div class="layui-col-md5" style="width:450px">
                 <div class="layui-carousel" id="swiper"
                      :style='{"boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 auto","borderColor":"rgba(0,0,0,.3)","borderRadius":"0px","borderWidth":"0","width":"450px","borderStyle":"solid","height":"400px"}'>
                     <div carousel-item>
                         <div v-if="swiperList.length" v-for="(item,index) in swiperList" :key="index">
-                            <img style="width: 100%;height: 100%;object-fit:cover;" :src="item"/>
+                            <img style="width: 100%;height: 100%;object-fit:cover;margin-left: 10px" :src="item"/>
                         </div>
                     </div>
                 </div>
@@ -263,10 +263,10 @@
                                 </div>
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
-                                        <button :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.3)","margin":"10px 5px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"14px","borderWidth":"0","width":"auto","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'
+                                        <button :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.3)","margin":"10px 5px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgb(170,228,217)","color":"#fff","borderRadius":"14px","borderWidth":"0","width":"auto","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'
                                                 class="layui-btn btn-submit" lay-submit lay-filter="*">立即提交
                                         </button>
-                                        <button :style='{"padding":"0 10px","boxShadow":"0 0 2px rgb(255,153,0)","margin":"10px 5px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 255, 255, 1)","color":"rgba(255, 153, 0, 1)","borderRadius":"14px","borderWidth":"0","width":"auto","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'
+                                        <button :style='{"padding":"0 10px","boxShadow":"0 0 2px rgb(255,153,0)","margin":"10px 5px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgb(170,228,217)","color":"rgb(170,228,217)","borderRadius":"14px","borderWidth":"0","width":"auto","lineHeight":"34px","fontSize":"14px","borderStyle":"solid"}'
                                                 type="reset" class="layui-btn layui-btn-primary">重置
                                         </button>
                                     </div>
