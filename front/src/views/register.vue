@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="login-form" style="backgroundColor:rgba(255,255,255,.5);borderRadius:10px">
-        <h1 class="h1" style="color:rgba(0, 150, 136, 1);fontSize:28px;">电影评论网站系统注册</h1>
+        <h1 class="h1" style="color:#34017b;fontSize:28px;">电影评论网站系统注册</h1>
 		<el-form ref="rgsForm" class="rgs-form" :model="rgsForm" label-width="120px">
 			<!-- <div v-if="tableName=='yonghu'" class="input-group">
 			   <div class="label">用户名</div>
@@ -332,9 +332,9 @@ export default {
 					font-size: 15px;
 					border-width: 0px;
 					border-style: solid;
-					border-color: rgba(0, 150, 136, 1);
+					border-color: #34017b;
 					border-radius: 4px;
-					background-color: rgba(0, 150, 136, 1);
+					background-color: #34017b;
 				}
 
 				.close {
@@ -347,7 +347,7 @@ export default {
 					border-style: solid;
 					border-color: #409EFF;
 					border-radius: 5px;
-					background-color: rgba(0, 150, 136, 1);
+					background-color: #34017b;
 				}
 
 			}

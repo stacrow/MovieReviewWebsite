@@ -278,8 +278,7 @@ width: 100%;
 	    <div class="list news" style="position: relative;width: 100%;">
 	      <div @click="jump('../discussdianyingxinxi/detail.html?id='+item.id)" v-for="(item,index) in dataList" :key="index" class="list-item" :class="3=='1'?'list-item1':3=='3'?'list-item3':''">
 	        <div class="list-item-body animation-box" :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"#fff","borderRadius":"4px","borderWidth":"0","borderStyle":"solid"}'>
-	          	          	          	          	          	          	          	          	          	          	          	          <div class="item-info">
-				  				  				  				  				  				  				  				  				  				  				  				  <div v-if="item.price" :style='{"padding":"0","margin":"10px 0 0 0","backgroundColor":"rgba(170, 90, 90, 0)","color":"rgba(48, 46, 46, 1)","borderRadius":"0","textAlign":"right","width":"100%","fontSize":"16px"}' class="time">{{item.price}} RMB</div>
+	          	          	          	          	          	          	          	          	          	          	          	          <div class="item-info"><div v-if="item.price" :style='{"padding":"0","margin":"10px 0 0 0","backgroundColor":"rgba(170, 90, 90, 0)","color":"rgba(48, 46, 46, 1)","borderRadius":"0","textAlign":"right","width":"100%","fontSize":"16px"}' class="time">{{item.price}} RMB</div>
 	          </div>
 	        </div>
 	      </div>
@@ -409,7 +408,7 @@ width: 100%;
             limit: limit,
             groups: 5,
             layout: ["prev","page","next"],
-            theme: '#FF9900',
+            theme: 'rgba(71, 101, 140, 1) ',
             jump: function(obj, first) {
             	param.page = obj.curr;
               //首次不执行

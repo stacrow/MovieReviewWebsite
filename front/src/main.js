@@ -4,6 +4,8 @@ import App from '@/App.vue'
 import ElementUI from 'element-ui'
 import '@/assets/css/element-variables.scss'
 import '@/assets/css/style.scss'
+import 'element-ui/lib/theme-chalk/index.css'
+import './theme/index.scss'  // 引入自定义主题
 // 加载路由
 // import router from '@/router/router-static.js';
 import router from '@/router/router-static.js';
@@ -70,6 +72,12 @@ Vue.component('editor', Editor)
 Vue.component('downloadExcel', JsonExcel)
 //MD5
 Vue.prototype.$md5 = md5;
+
+// 设置主题色
+ElementUI.theme = {
+  primary: '#34017b'
+}
+
 new Vue({
   render: h => h(App),
   router

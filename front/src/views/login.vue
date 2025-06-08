@@ -1,44 +1,45 @@
 <template>
   <div>
-    <div class="container loginIn" >
-
-      <div :class="2 == 1 ? 'left' : 2 == 2 ? 'left center' : 'left right'" style="background-color: rgba(255, 255, 255, 0.2)">
-        <el-form class="login-form" label-position="left" :label-width="2 == 3 ? '56px' : '0px'">
-          <div class="title-container"><h3 class="title" style="color: rgba(0, 150, 136, 1)">电影评论网站系统登录</h3></div>
-          <el-form-item :label="2 == 3 ? '用户名' : ''" :class="'style'+2">
-            <span v-if="2 != 3" class="svg-container" style="color:rgba(0, 150, 136, 1);line-height:44px"><svg-icon icon-class="user" /></span>
-            <el-input placeholder="请输入用户名" name="username" type="text" v-model="rulesForm.username" />
-          </el-form-item>
-          <el-form-item :label="2 == 3 ? '密码' : ''" :class="'style'+2">
-            <span v-if="2 != 3" class="svg-container" style="color:rgba(0, 150, 136, 1);line-height:44px"><svg-icon icon-class="password" /></span>
-            <el-input placeholder="请输入密码" name="password" type="password" v-model="rulesForm.password" />
-          </el-form-item>
-          <el-form-item v-if="0 == '1'" class="code" :label="2 == 3 ? '验证码' : ''" :class="'style'+2">
-            <span v-if="2 != 3" class="svg-container" style="color:rgba(0, 150, 136, 1);line-height:44px"><svg-icon icon-class="code" /></span>
-            <el-input placeholder="请输入验证码" name="code" type="text" v-model="rulesForm.code" />
-            <div class="getCodeBt" @click="getRandCode(4)" style="height:44px;line-height:44px">
-              <span v-for="(item, index) in codes" :key="index" :style="{color:item.color,transform:item.rotate,fontSize:item.size}">{{ item.num }}</span>
-            </div>
-          </el-form-item>
-          <el-form-item label="角色" prop="loginInRole" class="role">
-            <el-radio
-              v-for="item in menus"
-	      v-if="item.hasBackLogin=='是'"
-              v-bind:key="item.roleName"
-              v-model="rulesForm.role"
-              :label="item.roleName"
-            >{{item.roleName}}</el-radio>
-          </el-form-item>
-          <el-button type="primary" @click="login()" class="loginInBt" style="padding:0;font-size:16px;border-radius:4px;height:44px;line-height:44px;width:100%;backgroundColor:rgba(0, 150, 136, 1); borderColor:rgba(0, 150, 136, 1); color:rgba(255, 255, 255, 1)">{{'1' == '1' ? '登录' : 'login'}}</el-button>
-          <el-form-item class="setting">
-            <!-- <div style="color:rgba(0, 150, 136, 1)" class="reset">修改密码</div> -->
-          </el-form-item>
-        </el-form>
+    <div class="container loginIn">
+      <div class="login-container">
+        <div class="login-img">
+          <img src="@/assets/img/bg_purple.jpg" alt="login">
+        </div>
+        <div class="login-form-container">
+          <el-form class="login-form" label-position="left" :label-width="0">
+            <div class="title-container"><h3 class="title" style="color: #34017b">电影评论网站系统</h3></div>
+            <el-form-item :class="'style'+2">
+              <el-input placeholder="请输入用户名" name="username" type="text" v-model="rulesForm.username" />
+            </el-form-item>
+            <el-form-item :class="'style'+2">
+              <el-input placeholder="请输入密码" name="password" type="password" v-model="rulesForm.password" />
+            </el-form-item>
+            <el-form-item v-if="0 == '1'" class="code" :class="'style'+2">
+              <el-input placeholder="请输入验证码" name="code" type="text" v-model="rulesForm.code" />
+              <div class="getCodeBt" @click="getRandCode(4)" style="height:44px;line-height:44px">
+                <span v-for="(item, index) in codes" :key="index" :style="{color:item.color,transform:item.rotate,fontSize:item.size}">{{ item.num }}</span>
+              </div>
+            </el-form-item>
+            <el-form-item class="role">
+              <el-radio
+                v-for="item in menus"
+                v-if="item.hasBackLogin=='是'"
+                v-bind:key="item.roleName"
+                v-model="rulesForm.role"
+                :label="item.roleName"
+              >{{item.roleName}}</el-radio>
+            </el-form-item>
+            <el-button type="primary" @click="login()" class="loginInBt" style="padding:0;font-size:16px;border-radius:4px;height:44px;line-height:44px;width:100%;backgroundColor:#34017b; borderColor:#34017b; color:rgba(255, 255, 255, 1)">{{'1' == '1' ? '登录' : 'login'}}</el-button>
+            <el-form-item class="setting">
+              <!-- <div style="color:#34017b" class="reset">修改密码</div> -->
+            </el-form-item>
+          </el-form>
+        </div>
       </div>
-
     </div>
   </div>
 </template>
+
 <script>
 import menu from "@/utils/menu";
 export default {
@@ -98,11 +99,11 @@ export default {
           el.style.lineHeight = "44px"
         })
         document.querySelectorAll('.loginIn .el-form-item__label').forEach(el=>{
-          el.style.color = "rgba(0, 150, 136, 1)"
+          el.style.color = "#34017b"
         })
         setTimeout(()=>{
           document.querySelectorAll('.loginIn .role .el-radio__label').forEach(el=>{
-            el.style.color = "rgba(0, 150, 136, 1)"
+            el.style.color = "#34017b"
           })
         },350)
       })
@@ -200,97 +201,96 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .loginIn {
   min-height: 100vh;
   position: relative;
+  background: linear-gradient(135deg, #e6e6fa 0%, #d8bfd8 100%);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  background-image: url('../assets/img/LoginBg.jpg');
+  font-family: "PingFang SC", "Microsoft YaHei", "Source Han Sans", "Hiragino Sans GB", "SimHei", sans-serif;
 
-  .left {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 360px;
-    height: 100%;
-
-    .login-form {
-      background-color: transparent;
-      width: 100%;
-      right: inherit;
-      padding: 0 12px;
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .title-container {
-      text-align: center;
-      font-size: 24px;
-
-      .title {
-        margin: 20px 0;
-      }
-    }
-
-    .el-form-item {
-      position: relative;
-
-      .svg-container {
-        padding: 6px 5px 6px 15px;
-        color: #889aa4;
-        vertical-align: middle;
-        display: inline-block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 1;
-        padding: 0;
-        line-height: 40px;
-        width: 30px;
-        text-align: center;
-      }
-
-      .el-input {
-        display: inline-block;
-        height: 40px;
-        width: 100%;
-
-        & ::v-deep input {
-          background: transparent;
-          border: 0px;
-          -webkit-appearance: none;
-          padding: 0 15px 0 30px;
-          color: #fff;
-          height: 40px;
-        }
-      }
-
-    }
-
-
-  }
-
-  .center {
+  .login-container {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 360px;
-    transform: translate3d(-50%,-50%,0);
+    transform: translate(-50%, -50%);
+    width: 720px;
     height: 446px;
+    display: flex;
     border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   }
 
-  .right {
-    position: absolute;
-    left: inherit;
-    right: 0;
-    top: 0;
+  .login-img {
     width: 360px;
+    height: 446px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px 0 0 8px;
+    }
+  }
+
+  .login-form-container {
+    width: 360px;
+    height: 446px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0 8px 8px 0;
+  }
+
+  .login-form {
     height: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+  }
+
+  .title-container {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+
+    .title {
+      margin: 20px 0;
+      letter-spacing: 1px;
+    }
+  }
+
+  .el-form-item {
+    position: relative;
+
+    .el-input {
+      display: inline-block;
+      height: 40px;
+      width: 100%;
+
+      & ::v-deep input {
+        background: transparent;
+        border: 0px;
+        -webkit-appearance: none;
+        padding: 0 15px;
+        color: #fff;
+        height: 40px;
+        font-family: "PingFang SC", "Microsoft YaHei", "Source Han Sans", "Hiragino Sans GB", "SimHei", sans-serif;
+        font-size: 14px;
+      }
+    }
   }
 
   .code {
@@ -350,12 +350,6 @@ export default {
   }
 
   .style2 {
-    padding-left: 30px;
-
-    .svg-container {
-      left: -30px !important;
-    }
-
     .el-input {
       & ::v-deep input {
         padding: 0 15px !important;
@@ -384,14 +378,55 @@ export default {
   }
 
   .role {
-    & ::v-deep .el-form-item__label {
-      width: 56px !important;
+    & ::v-deep .el-form-item__content {
+      display: flex;
+      justify-content: space-around;
+      margin-left: 0 !important;
+      height: 33px;
+      line-height: 33px;
     }
 
     & ::v-deep .el-radio {
-      margin-right: 12px;
+      margin-right: 0;
+      flex: 1;
+      text-align: center;
+      height: 33px;
+      line-height: 33px;
+
+      .el-radio__input.is-checked .el-radio__inner {
+        background-color: #34017b;
+        border-color: #34017b;
+      }
+
+      .el-radio__input.is-checked + .el-radio__label {
+        color: #34017b;
+      }
+    }
+
+    & ::v-deep .el-radio__input {
+      .el-radio__inner {
+        border-radius: 50%;
+      }
     }
   }
+}
 
+.el-form-item {
+  .el-input {
+    display: inline-block;
+    height: 33px;
+    width: 100%;
+
+    & ::v-deep .el-input__inner {
+      height: 33px;
+      line-height: 33px;
+      border-radius: 16px !important;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+  }
+}
+
+.loginInBt {
+  border-radius: 16px !important;
 }
 </style>

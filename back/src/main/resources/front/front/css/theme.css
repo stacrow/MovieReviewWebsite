@@ -225,24 +225,24 @@
 .center-container .layui-nav-tree .layui-nav-bar {
     width: 5px;
     height: 0;
-    background-color: #ce0b07;
+    background-color: rgba(71, 101, 140, 1);
 }
 
 /* 分页插件 */
 .layui-laypage .layui-laypage-curr .layui-laypage-em {
-	background-color: #ce0b07;
+	background-color: rgba(71, 101, 140, 1);
 }
 
 .layui-laypage a:hover {
-	color: #ce0b07;
+	color: rgba(71, 101, 140, 1);
 }
 
 .btn-submit {
-	background: #ce0b07;
+	background: rgba(71, 101, 140, 1);
 }
 
 .btn-theme{
-	background: #ce0b07;
+	background: rgba(71, 101, 140, 1);
 }
 
 

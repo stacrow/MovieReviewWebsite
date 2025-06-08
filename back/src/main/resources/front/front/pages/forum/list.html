@@ -64,6 +64,10 @@
 		.layui-laypage .layui-laypage-skip {
 		  padding-left: 10px;
 		}
+		.forum-item :hover {
+			background-color: rgb(90, 126, 172);
+		}
+
 	</style>
 	<body>
 
@@ -82,23 +86,20 @@
 
 			<div class="forum-container">
 				<div class="btn-container" :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"10px 0 10px 0","borderColor":"rgba(0,0,0,.3)","backgroundColor":"rgba(255, 255, 255, 1)","borderRadius":"4px","alignItems":"flex-end","borderWidth":"0","borderStyle":"solid","justifyContent":"flex-end","height":"64px"}'>
-					<!-- <input type="" name="" id="" value="" />
-					<button :style='{"padding":"0 15px","boxShadow":"0 0 8px rgba(0,0,0,0)","margin":"0 0 0 10px","borderColor":"#409EFF","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"40px"}'  type="button" class="layui-btn layui-btn-lg btn-theme">
-						<i v-if="true" class="layui-icon">&#xe654;</i> 搜索
-					</button> -->
-					<button :style='{"padding":"0 15px","boxShadow":"0 0 8px rgba(0,0,0,0)","margin":"0 0 0 10px","borderColor":"#409EFF","backgroundColor":"rgba(255, 153, 0, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"40px"}'  @click="jump('../forum/add.html')" type="button" class="layui-btn layui-btn-lg btn-theme">
+					<button :style='{"padding":"0 15px","boxShadow":"0 0 8px rgba(0,0,0,0)","margin":"0 0 0 10px","borderColor":"#409EFF","backgroundColor":"rgba(71, 101, 140, 1)","color":"#fff","borderRadius":"4px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"40px"}'  @click="jump('../forum/add.html')" type="button" class="layui-btn layui-btn-lg btn-theme">
 						<i v-if="true" class="layui-icon">&#xe654;</i> 发布帖子
 					</button>
 				</div>
 				<div class="forum-list">
-					<div v-for="(item,index) in dataList" v-bind:key="index" href="javascript:void(0);" @click="jump('../forum/detail.html?id='+item.id);" class="forum-item">
-						<h2 class="h2">{{item.title}}（发布人：{{item.username}}）</h2>
-						<div class="create-time">
+					<div v-for="(item,index) in dataList" v-bind:key="index" href="javascript:void(0);" @click="jump('../forum/detail.html?id='+item.id);" class="forum-item"
+						 :style='{"backgroundColor":"rgba(71, 101, 140, 0.5)"}' class="forum-item">
+						<h2 class="h2" :style='{"color":"#f5f7fa"}'>{{item.title}}（发布人：{{item.username}}）</h2>
+						<div class="create-time" :style='{"color":"#f5f7fa"}'>
 							{{item.addtime}}
 						</div>
 					</div>
 				</div>
-				<div class="pager" id="pager" :style="{textAlign:2==1?'left':2==2?'center':'right'}"></div>
+				<div class="pager" id="pager" :style="{textAlign:2==1?'left':2==2?'center':'right', marginBottom: '20px'}"></div>
 			</div>
 		</div>
 
@@ -198,7 +199,7 @@
 						limit: limit,
 						groups: 5,
 						layout: ["prev","page","next"],
-						theme: '#FF9900',
+						theme: 'rgba(71, 101, 140, 1)',
 						jump: function(obj, first) {
 							//首次不执行
 							if (!first) {

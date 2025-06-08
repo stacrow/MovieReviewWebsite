@@ -15,12 +15,21 @@
 	<div class="navbar" :style="{backgroundColor:heads.headBgColor,height:heads.headHeight,boxShadow:heads.headBoxShadow,lineHeight:heads.headHeight}">
 		<div class="title-menu" :style="{justifyContent:heads.headTitleStyle=='1'?'flex-start':'center'}">
 			<el-image v-if="heads.headTitleImg" class="title-img" :style="{width:heads.headTitleImgWidth,height:heads.headTitleImgHeight,boxShadow:heads.headTitleImgBoxShadow,borderRadius:heads.headTitleImgBorderRadius}" :src="heads.headTitleImgUrl" fit="cover"></el-image>
-			<div class="title-name" :style="{color:heads.headFontColor,fontSize:heads.headFontSize}">{{this.$project.projectName}}</div>
+			<div class="title-name">{{this.$project.projectName}}</div>
 		</div>
 		<div class="right-menu">
-			<div class="user-info" :style="{color:heads.headUserInfoFontColor,fontSize:heads.headUserInfoFontSize}">{{this.$storage.get('role')}} {{this.$storage.get('adminName')}}</div>
-			<div class="logout" :style="{color:heads.headLogoutFontColor,fontSize:heads.headLogoutFontSize}" @click="onIndexTap">退出到前台</div>
-			<div class="logout" :style="{color:heads.headLogoutFontColor,fontSize:heads.headLogoutFontSize}" @click="onLogout">退出登录</div>
+			<div class="user-info" :style="{color:heads.headUserInfoFontColor,fontSize:heads.headUserInfoFontSize}">
+				<i class="el-icon-user"></i>
+				{{this.$storage.get('role')}} {{this.$storage.get('adminName')}}
+			</div>
+			<div class="logout" :style="{color:heads.headLogoutFontColor,fontSize:heads.headLogoutFontSize}" @click="onIndexTap">
+				<i class="el-icon-s-home"></i>
+				返回前台
+			</div>
+			<div class="logout" :style="{color:heads.headLogoutFontColor,fontSize:heads.headLogoutFontSize}" @click="onLogout">
+				<i class="el-icon-switch-button"></i>
+				退出登录
+			</div>
 		</div>
 	</div>
 </template>
@@ -32,7 +41,7 @@
 				dialogVisible: false,
 				ruleForm: {},
 				user: {},
-				heads: {"headLogoutFontHoverColor":"#fff","headFontSize":"20px","headUserInfoFontColor":"rgba(255, 255, 255, 1)","headBoxShadow":"0px 8px 0px #009688","headTitleImgHeight":"44px","headLogoutFontHoverBgColor":"rgba(0, 150, 136, 1)","headFontColor":"rgba(255, 255, 255, 1)","headTitleImg":false,"headHeight":"80px","headTitleImgBorderRadius":"22px","headTitleImgUrl":"http://codegen.caihongy.cn/20201021/cc7d45d9c8164b58b18351764eba9be1.jpg","headBgColor":"#222222","headTitleImgBoxShadow":"0 1px 6px #444","headLogoutFontColor":"rgba(255, 255, 255, 1)","headUserInfoFontSize":"16px","headTitleImgWidth":"44px","headTitleStyle":"2","headLogoutFontSize":"16px"},
+				heads: {"headLogoutFontHoverColor":"#fff","headFontSize":"20px","headUserInfoFontColor":"rgba(0, 0, 0, 1)","headBoxShadow":"0px 8px 0px #34017b","headTitleImgHeight":"44px","headLogoutFontHoverBgColor":"rgba(0, 0, 0, 1)","headFontColor":"rgba(255, 255, 255, 1)","headTitleImg":false,"headHeight":"50px","headTitleImgBorderRadius":"22px","headTitleImgUrl":"http://codegen.caihongy.cn/20201021/cc7d45d9c8164b58b18351764eba9be1.jpg","headBgColor":"#EEEEEE","headTitleImgBoxShadow":"0 1px 6px #444","headLogoutFontColor":"rgba(0, 0, 0, 1)","headUserInfoFontSize":"16px","headTitleImgWidth":"44px","headTitleStyle":"2","headLogoutFontSize":"16px"},
 			};
 		},
 		created() {
@@ -89,63 +98,92 @@
 
 <style lang="scss" scoped>
 	.navbar {
-		height: 60px;
-		line-height: 60px;
+		height: 50px !important;
+		line-height: 50px !important;
 		width: 100%;
-		padding: 0 34px;
+		padding: 0 24px;
 		box-sizing: border-box;
-		background-color: #ff00ff;
+		background: #34017b;
 		position: relative;
 		z-index: 111;
+		box-shadow: 0 2px 12px rgba(52, 1, 123, 0.2);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 		
 		.right-menu {
-			position: absolute;
-			right: 34px;
-			top: 0;
-			height: 100%;
 			display: flex;
 			justify-content: flex-end;
 			align-items: center;
 			z-index: 111;
 			
 			.user-info {
-				font-size: 16px;
-				color: red;
+				font-size: 14px;
+				color: #fff;
 				padding: 0 12px;
+				display: flex;
+				align-items: center;
+				height: 32px;
+				line-height: 32px;
+				
+				i {
+					margin-right: 6px;
+					font-size: 16px;
+				}
 			}
 			
 			.logout {
-				font-size: 16px;
-				color: red;
+				font-size: 14px;
+				color: #fff;
 				padding: 0 12px;
 				cursor: pointer;
+				transition: all 0.3s;
+				border-radius: 4px;
+				display: flex;
+				align-items: center;
+				height: 32px;
+				line-height: 32px;
+				
+				i {
+					margin-right: 6px;
+					font-size: 16px;
+				}
+				
+				&:hover {
+					background: rgba(255, 255, 255, 0.1);
+				}
 			}
-			
 		}
 		
 		.title-menu {
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
-			width: 100%;
 			height: 100%;
 			
 			.title-img {
-				width: 44px;
-				height: 44px;
-				border-radius: 22px;
-				box-shadow: 0 1px 6px #444;
-				margin-right: 16px;
+				width: 32px;
+				height: 32px;
+				border-radius: 16px;
+				box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+				margin-right: 12px;
 			}
 			
 			.title-name {
-				text-align: center;
-				font-size: 24px;
-				color: #fff;
-				font-weight: 700;
+				font-size: 18px;
+				color: #000000;
+				font-weight: 600;
+				text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 			}
 		}
 	}
+
+	:deep(.el-header) {
+		height: 50px !important;
+		line-height: 50px !important;
+		padding: 0 !important;
+	}
+
 	// .el-header .fr {
 	// 	float: right;
 	// }

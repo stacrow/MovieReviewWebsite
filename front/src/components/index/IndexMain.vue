@@ -63,11 +63,11 @@
 <style lang="scss" scoped>
 	a {
 		text-decoration: none;
-		color: #555;
+		color: #34017b;
 	}
 
 	a:hover {
-		background: #00c292;
+		background: rgba(52, 1, 123, 0.1);
 	}
 
 	.nav-list {
@@ -79,15 +79,15 @@
 		.nav-title {
 			display: inline-block;
 			font-size: 15px;
-			color: #333;
+			color: #34017b;
 			padding: 15px 25px;
 			border: none;
 		}
 
 		.nav-title.active {
-			color: #555;
+			color: #34017b;
 			cursor: default;
-			background-color: #fff;
+			background-color: rgba(52, 1, 123, 0.1);
 		}
 	}
 
@@ -95,30 +95,33 @@
 		margin-top: 20px;
 		background: #FFFFFF;
 		padding: 15px 0;
+		border-radius: 8px;
+		box-shadow: 0 2px 12px rgba(52, 1, 123, 0.1);
 
 		.menu {
 			padding: 15px 25px;
+			color: #34017b;
 		}
 	}
 
 	.el-main {
-		background-color: #F6F8FA;
+		background-color: #f8f5ff;
 		padding: 0 24px;
-		// padding-top: 60px;
 	}
 
 	.router-view {
-		padding: 10px;
-		margin-top: 10px;
+		padding: 20px;
+		margin-top: 15px;
 		background: #FFFFFF;
 		box-sizing: border-box;
+		border-radius: 8px;
+		box-shadow: 0 2px 12px rgba(52, 1, 123, 0.1);
 	}
 
 	.bread-crumbs {
 		width: 100%;
-		// border-bottom: 1px solid #e9eef3;
-		// border-top: 1px solid #e9eef3;
-		margin-top: 10px;
+		margin-top: 15px;
 		box-sizing: border-box;
+		padding: 10px 0;
 	}
 </style>

@@ -49,3 +49,28 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.el-submenu {
+  .el-submenu__title {
+    color: #34017b;
+    
+    &:hover {
+      background-color: rgba(52, 1, 123, 0.1);
+    }
+  }
+}
+
+.el-menu-item {
+  color: #34017b;
+  
+  &:hover {
+    background-color: rgba(52, 1, 123, 0.1);
+  }
+  
+  &.is-active {
+    background-color: rgba(52, 1, 123, 0.2);
+    color: #34017b;
+  }
+}
+</style>
