@@ -16,7 +16,7 @@ import com.entity.view.DianyingxinxiView;
  * 
  * @author 
  * @email 
- * @date 2021-04-29 07:29:02
+ * @date 2025-04-29 07:29:02
  */
 public interface DianyingxinxiDao extends BaseMapper<DianyingxinxiEntity> {
 	

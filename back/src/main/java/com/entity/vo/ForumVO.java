@@ -16,7 +16,7 @@ import java.io.Serializable;
  * （主要作用去除一些不必要的字段）
  * @author 
  * @email 
- * @date 2021-04-29 07:29:02
+ * @date 2025-04-29 07:29:02
  */
 public class ForumVO  implements Serializable {
 	private static final long serialVersionUID = 1L;
